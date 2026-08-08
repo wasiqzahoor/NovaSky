@@ -258,17 +258,21 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== Mobile Menu =====
+  const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
   mobileMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.add('active');
+    mobileMenuOverlay.classList.add('active');
     mobileMenuBtn.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
   });
   function closeMobileMenu() {
     mobileMenu.classList.remove('active');
+    mobileMenuOverlay.classList.remove('active');
     mobileMenuBtn.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
   mobileCloseBtn.addEventListener('click', closeMobileMenu);
+  mobileMenuOverlay.addEventListener('click', closeMobileMenu);
   mobileMenu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
