@@ -144,6 +144,23 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--gray-900
 .btn-wa-mobile { display: flex; align-items: center; justify-content: center; gap: .5rem; background: var(--whatsapp) !important; color: #fff !important; border: none !important; padding: .85rem !important; border-radius: var(--radius-full) !important; font-size: .9rem !important; font-weight: 600 !important; margin: 1rem 1.25rem; transition: all .3s; }
 .btn-wa-mobile:hover { background: #1DA851 !important; transform: translateY(-2px); }
 
+/* ===== POLICY MODAL ===== */
+.policy-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 2500; opacity: 0; visibility: hidden; transition: all .3s; backdrop-filter: blur(6px); display: flex; align-items: center; justify-content: center; padding: 1.5rem; }
+.policy-overlay.active { opacity: 1; visibility: visible; }
+.policy-modal { background: #fff; border-radius: var(--radius-xl); width: 100%; max-width: 650px; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 25px 60px rgba(0,0,0,.3); transform: translateY(20px) scale(.97); transition: all .35s cubic-bezier(.4,0,.2,1); }
+.policy-overlay.active .policy-modal { transform: translateY(0) scale(1); }
+.policy-header { display: flex; align-items: center; justify-content: space-between; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--gray-200); flex-shrink: 0; }
+.policy-header h2 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); }
+.policy-close-btn { background: var(--gray-100); border: none; width: 36px; height: 36px; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--gray-500); transition: all .2s; flex-shrink: 0; }
+.policy-close-btn:hover { background: var(--gray-200); color: var(--gray-700); }
+.policy-close-btn i { font-size: 16px; }
+.policy-body { padding: 1.5rem; overflow-y: auto; flex: 1; }
+.policy-body h3 { font-size: 1rem; font-weight: 700; color: var(--gray-800); margin: 1.25rem 0 .5rem; }
+.policy-body h3:first-child { margin-top: 0; }
+.policy-body p { font-size: .85rem; color: var(--gray-600); line-height: 1.75; margin-bottom: .75rem; }
+.policy-body ul { padding-left: 1.25rem; margin-bottom: .75rem; }
+.policy-body li { font-size: .85rem; color: var(--gray-600); line-height: 1.75; margin-bottom: .25rem; }
+
 /* ===== SEARCH OVERLAY ===== */
 .search-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.6); z-index: 2000; opacity: 0; visibility: hidden; transition: all .3s; backdrop-filter: blur(6px); display: flex; align-items: flex-start; justify-content: center; padding-top: 100px; }
 .search-overlay.active { opacity: 1; visibility: visible; }

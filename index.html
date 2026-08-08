@@ -7,6 +7,7 @@
   <meta name="description" content="NOVASKY offers premium organic skincare products in Pakistan. Shop face wash, brightening serum, BB cream, SPF 60 sunscreen & night cream. Free delivery on Rs.2000+.">
   <meta name="keywords" content="skincare products, face wash Pakistan, whitening cream, brightening serum, SPF 60 sunscreen, organic skincare, best face wash, skin care products Pakistan, beauty cream, healthy skin, glowing skin, premium skincare, natural skincare, NOVASKY, NSD Distributors">
   <meta name="author" content="NSD Distributors">
+  <meta name="developer" content="NewTechSofts — Web Development & Digital Agency">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://novasky.pk/">
 
@@ -17,12 +18,17 @@
   <meta property="og:description" content="Shop premium organic skincare by NOVASKY. Face wash, serum, BB cream, sunscreen & night cream. Free delivery on Rs.2000+.">
   <meta property="og:image" content="images/logo.png">
   <meta property="og:site_name" content="NOVASKY">
+  <meta property="og:see_also" content="https://newtechsofts.com">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="NOVASKY — Premium Skincare Products Pakistan">
   <meta name="twitter:description" content="Shop premium organic skincare by NOVASKY. Face wash, serum, BB cream, sunscreen & night cream.">
   <meta name="twitter:image" content="images/logo.png">
+
+  <!-- Developer Credit -->
+  <meta name="designer" content="NewTechSofts">
+  <meta name="developer" content="https://newtechsofts.com">
 
   <link rel="icon" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,6 +77,27 @@
     "email": "novasky@gmail.com",
     "openingHours": "Mo-Sa 09:00-21:00",
     "priceRange": "Rs.899 - Rs.1499"
+  }
+  </script>
+
+  <!-- Structured Data: Developer Credit -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NOVASKY",
+    "url": "https://novasky.pk",
+    "creator": {
+      "@type": "Organization",
+      "name": "NewTechSofts",
+      "url": "https://newtechsofts.com",
+      "description": "Web Development, UI/UX Design & Digital Marketing Agency",
+      "sameAs": [
+        "https://newtechsofts.com",
+        "https://www.facebook.com/newtechsofts",
+        "https://www.instagram.com/newtechsofts"
+      ]
+    }
   }
   </script>
 
@@ -624,13 +651,24 @@
       <div class="container footer-bottom-inner">
         <p>&copy; 2026 NOVASKY by NSD Distributors. All rights reserved.</p>
         <div class="footer-bottom-links">
-          <span>Powered by <strong>NewTechSofts</strong></span>
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
+          <span>Designed & Developed by <a href="https://newtechsofts.com" target="_blank" rel="noopener noreferrer" title="NewTechSofts — Web Development & Digital Agency"><strong>NewTechSofts</strong></a></span>
+          <a href="#" class="policy-link" data-policy="privacy">Privacy Policy</a>
+          <a href="#" class="policy-link" data-policy="terms">Terms of Service</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- ===== POLICY MODAL ===== -->
+  <div class="policy-overlay" id="policyOverlay">
+    <div class="policy-modal">
+      <div class="policy-header">
+        <h2 id="policyTitle">Privacy Policy</h2>
+        <button class="policy-close-btn" id="policyCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="policy-body" id="policyBody"></div>
+    </div>
+  </div>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>

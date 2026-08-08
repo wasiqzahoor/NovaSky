@@ -626,6 +626,112 @@ document.addEventListener('DOMContentLoaded', () => {
     alert('Message sent via WhatsApp!');
   });
 
+  // ===== Policy Modal =====
+  const policyOverlay = document.getElementById('policyOverlay');
+  const policyTitle = document.getElementById('policyTitle');
+  const policyBody = document.getElementById('policyBody');
+  const policyCloseBtn = document.getElementById('policyCloseBtn');
+
+  const policyContent = {
+    privacy: {
+      title: 'Privacy Policy',
+      html: `
+        <h3>1. Information We Collect</h3>
+        <p>When you visit NOVASKY, we automatically collect certain information about your device, including your web browser, IP address, time zone, and some cookies. We also collect information about the individual web pages you view, what websites or search terms referred you, and how you interact with our site.</p>
+        <p>When you make a purchase or attempt to make a purchase, we collect your name, billing address, shipping address, payment information, email address, and phone number. This is referred to as "Order Information."</p>
+
+        <h3>2. How We Use Your Information</h3>
+        <ul>
+          <li>To process and fulfill your orders, including sending emails, text messages, or WhatsApp messages to confirm your order status and shipment.</li>
+          <li>To communicate with you about products, services, promotions, and events offered by NOVASKY.</li>
+          <li>To provide customer support and respond to your inquiries.</li>
+          <li>To improve and personalize your shopping experience.</li>
+          <li>To detect, prevent, and address fraud, unauthorized access, and other illegal activities.</li>
+        </ul>
+
+        <h3>3. Sharing Your Information</h3>
+        <p>We share your Personal Information with third parties to help us use your Personal Information, as described above. For example, we use WhatsApp Business API to communicate with you regarding orders. We may also share your information to comply with applicable laws and regulations, to respond to a subpoena, search warrant, or other lawful request for information.</p>
+
+        <h3>4. Data Retention</h3>
+        <p>When you place an order through NOVASKY, we will maintain your Order Information for our records unless and until you ask us to delete this information.</p>
+
+        <h3>5. Your Rights</h3>
+        <p>If you are a resident of Pakistan, you have the right to access the personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. You may contact us at novasky@gmail.com.</p>
+
+        <h3>6. Cookies</h3>
+        <p>We use cookies to improve your experience on our site. You can control and manage cookies through your browser settings. Note that disabling cookies may affect the functionality of our website.</p>
+
+        <h3>7. Changes to This Policy</h3>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page.</p>
+
+        <h3>8. Contact Us</h3>
+        <p>For questions about our privacy practices, contact us at novasky@gmail.com or reach us via WhatsApp at +92 330 912 5388.</p>
+      `
+    },
+    terms: {
+      title: 'Terms of Service',
+      html: `
+        <h3>1. General Conditions</h3>
+        <p>We reserve the right to refuse service to anyone for any reason at any time. You understand that your content (not including credit card information) may be transferred unencrypted. Products are available exclusively online through NOVASKY.</p>
+
+        <h3>2. Accuracy of Information</h3>
+        <p>We are not responsible if information on this site is not accurate, complete, or current. The material is provided for general information only and should not be relied upon as the sole basis for making decisions. Any reliance on the material on this site is at your own risk.</p>
+
+        <h3>3. Products and Pricing</h3>
+        <p>Prices for our products are subject to change without notice. We reserve the right to modify or discontinue any product at any time. We shall not be liable to you for any modification, price change, suspension, or discontinuance of a product.</p>
+        <p>We have made every effort to display as accurately as possible the colors and images of our products. We cannot guarantee that your computer monitor's display of any color will be accurate.</p>
+
+        <h3>4. Orders and Payment</h3>
+        <p>We reserve the right to limit the quantities of any products that we offer. All descriptions of products and pricing are subject to change at any time without notice, at our sole discretion. We reserve the right to discontinue any product at any time.</p>
+        <p>Payment is processed via Cash on Delivery (COD) or online bank transfer. Orders are confirmed via WhatsApp or phone call.</p>
+
+        <h3>5. Shipping and Delivery</h3>
+        <p>Free delivery is available on orders above Rs. 2,000. Standard delivery takes 3-5 business days within Pakistan. We are not responsible for delays caused by the courier service.</p>
+
+        <h3>6. Returns and Refunds</h3>
+        <p>We accept returns within 7 days of delivery for unopened and unused products. To initiate a return, please contact us via WhatsApp at +92 330 912 5388. Refunds will be processed within 5-7 business days after receiving the returned product.</p>
+
+        <h3>7. User Conduct</h3>
+        <p>You agree not to use the site for any unlawful purpose or to solicit the performance of any illegal activity. You may not attempt to circumvent any security measures on the site.</p>
+
+        <h3>8. Intellectual Property</h3>
+        <p>All content on this site, including text, graphics, logos, images, and software, is the property of NOVASKY or its suppliers and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works without our express written permission.</p>
+
+        <h3>9. Limitation of Liability</h3>
+        <p>NOVASKY shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of or inability to use the site or products. Our total liability shall not exceed the amount paid by you for the product.</p>
+
+        <h3>10. Governing Law</h3>
+        <p>These Terms of Service shall be governed by and construed in accordance with the laws of Pakistan. Any disputes shall be subject to the exclusive jurisdiction of the courts of Islamabad.</p>
+
+        <h3>11. Contact</h3>
+        <p>Questions about the Terms of Service should be sent to novasky@gmail.com or via WhatsApp at +92 330 912 5388.</p>
+      `
+    }
+  };
+
+  function openPolicy(type) {
+    const data = policyContent[type];
+    if (!data) return;
+    policyTitle.textContent = data.title;
+    policyBody.innerHTML = data.html;
+    policyOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePolicy() {
+    policyOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.policy-link').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      openPolicy(link.dataset.policy);
+    });
+  });
+  policyCloseBtn.addEventListener('click', closePolicy);
+  policyOverlay.addEventListener('click', (e) => { if (e.target === policyOverlay) closePolicy(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && policyOverlay.classList.contains('active')) closePolicy(); });
+
   // ===== Back to Top =====
   window.addEventListener('scroll', () => { backToTop.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
   backToTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
