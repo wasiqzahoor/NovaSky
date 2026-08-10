@@ -1,34 +1,31 @@
-# robots.txt — NOVASKY Premium Skincare
-# https://novasky.pk
+# robots.txt — NovaSky Distributors
+# https://novaskydistributors.com
 
 User-agent: *
 Allow: /
-
-# Sitemaps
-Sitemap: https://novasky.pk/sitemap.xml
-
-# Disallow admin/development paths
 Disallow: /admin/
 Disallow: /api/
-Disallow: /*.json$
 
-# Crawl-delay for polite bots
-Crawl-delay: 1
+# Sitemaps
+Sitemap: https://novaskydistributors.com/sitemap.xml
 
-# Allow all major search engines
+# Google
 User-agent: Googlebot
 Allow: /
 
+# Bing
 User-agent: Bingbot
 Allow: /
 
+# Yahoo
 User-agent: Slurp
 Allow: /
 
+# DuckDuckGo
 User-agent: DuckDuckBot
 Allow: /
 
-# Social media crawlers
+# Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
 

@@ -277,6 +277,41 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMobileMenu);
   });
 
+  // ===== Desktop Dropdown =====
+  const navDropdown = document.getElementById('navDropdown');
+  if (navDropdown) {
+    const trigger = navDropdown.querySelector('.nav-dropdown-trigger');
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navDropdown.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', navDropdown.classList.contains('open'));
+    });
+    document.addEventListener('click', (e) => {
+      if (!navDropdown.contains(e.target)) {
+        navDropdown.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    navDropdown.querySelectorAll('.nav-dropdown-item').forEach(item => {
+      item.addEventListener('click', () => {
+        navDropdown.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // ===== Mobile Dropdown =====
+  document.querySelectorAll('.mobile-dropdown-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const dropdown = trigger.closest('.mobile-dropdown');
+      dropdown.classList.toggle('open');
+      trigger.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+    });
+  });
+  document.querySelectorAll('.mobile-dropdown-menu a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
   // ===== Carousel: pause on hover =====
 
   // ===== Cart Sidebar =====
@@ -624,8 +659,17 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     const name = document.getElementById('formName').value;
     const phone = document.getElementById('formPhone').value;
+    const category = document.getElementById('formCategory').value;
     const message = document.getElementById('formMessage').value;
-    window.open(`https://wa.me/923309125388?text=${encodeURIComponent(`Hi! I'm ${name}. ${message} My phone: ${phone}`)}`, '_blank');
+    const categoryLabels = {
+      'cosmetics': 'Cosmetics Products',
+      'pharmaceutical': 'Pharmaceutical Distribution',
+      'nutraceutical': 'Nutraceutical Distribution',
+      'surgical': 'Surgical Instruments',
+      'general': 'General Inquiry'
+    };
+    const categoryLabel = categoryLabels[category] || 'General Inquiry';
+    window.open(`https://wa.me/923309125388?text=${encodeURIComponent(`Hi! I'm ${name}. Inquiry Type: ${categoryLabel}. ${message} My phone: ${phone}`)}`, '_blank');
     contactForm.reset();
     alert('Message sent via WhatsApp!');
   });
@@ -660,7 +704,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>When you place an order through NOVASKY, we will maintain your Order Information for our records unless and until you ask us to delete this information.</p>
 
         <h3>5. Your Rights</h3>
-        <p>If you are a resident of Pakistan, you have the right to access the personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. You may contact us at novasky@gmail.com.</p>
+        <p>If you are a resident of Pakistan, you have the right to access the personal information we hold about you and to ask that your personal information be corrected, updated, or deleted. You may contact us at novaskydistributors@gmail.com.</p>
 
         <h3>6. Cookies</h3>
         <p>We use cookies to improve your experience on our site. You can control and manage cookies through your browser settings. Note that disabling cookies may affect the functionality of our website.</p>
@@ -669,7 +713,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the new Privacy Policy on this page.</p>
 
         <h3>8. Contact Us</h3>
-        <p>For questions about our privacy practices, contact us at novasky@gmail.com or reach us via WhatsApp at +92 330 912 5388.</p>
+        <p>For questions about our privacy practices, contact us at novaskydistributors@gmail.com or reach us via WhatsApp at +92 330 912 5388.</p>
       `
     },
     terms: {
@@ -708,7 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>These Terms of Service shall be governed by and construed in accordance with the laws of Pakistan. Any disputes shall be subject to the exclusive jurisdiction of the courts of Islamabad.</p>
 
         <h3>11. Contact</h3>
-        <p>Questions about the Terms of Service should be sent to novasky@gmail.com or via WhatsApp at +92 330 912 5388.</p>
+        <p>Questions about the Terms of Service should be sent to novaskydistributors@gmail.com or via WhatsApp at +92 330 912 5388.</p>
       `
     }
   };
