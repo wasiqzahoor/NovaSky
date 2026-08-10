@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
       shortDesc: 'Deep cleansing gel formula for daily use',
       desc: 'Gentle yet effective face wash that deeply cleanses while maintaining your skin\'s natural moisture balance. Enriched with natural extracts for a fresh, revitalized feel.',
       price: 899, originalPrice: 1799, rating: 4.9, reviews: 156,
-      badge: '50% OFF', image: 'images/NovaSky-Facewash.png',
-      images: ['images/NovaSky-Facewash.png', 'images/NovaSky-Facewash2.png'],
+      badge: '50% OFF', image: 'images/webp/NovaSky-Facewash.webp',
+      images: ['images/webp/NovaSky-Facewash.webp', 'images/webp/NovaSky-Facewash2.webp'],
       features: ['Deep cleansing formula', 'Natural ingredients', 'Paraben-free', 'Suitable for all skin types'],
       category: 'Cleanser'
     },
@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
       shortDesc: 'Advanced brightening & anti-aging treatment',
       desc: 'Powerful serum that brightens skin tone and reduces signs of aging. Formulated with Vitamin C and Hyaluronic Acid for maximum results in just weeks.',
       price: 1299, originalPrice: 2599, rating: 4.8, reviews: 203,
-      badge: 'Best Seller', image: 'images/NovaSky-Serum.png',
-      images: ['images/NovaSky-Serum.png', 'images/NovaSky-Serum2.png'],
+      badge: 'Best Seller', image: 'images/webp/NovaSky-Serum.webp',
+      images: ['images/webp/NovaSky-Serum.webp', 'images/webp/NovaSky-Serum2.webp'],
       features: ['Vitamin C enriched', 'Anti-aging formula', 'Hyaluronic Acid', 'Visible results in 2 weeks'],
       category: 'Serum'
     },
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
       shortDesc: 'Multi-functional beauty balm with SPF',
       desc: 'All-in-one BB cream that provides coverage, sun protection, and skincare benefits. Lightweight formula for a natural, flawless finish every day.',
       price: 999, originalPrice: 1999, rating: 4.7, reviews: 178,
-      badge: 'New', image: 'images/NovaSky-BB-Cream.png',
-      images: ['images/NovaSky-BB-Cream.png', 'images/NovaSky-BB-Cream2.png'],
+      badge: 'New', image: 'images/webp/NovaSky-BB-Cream.webp',
+      images: ['images/webp/NovaSky-BB-Cream.webp', 'images/webp/NovaSky-BB-Cream2.webp'],
       features: ['SPF 30 protection', 'Lightweight formula', 'Natural coverage', 'Moisturizing effect'],
       category: 'BB Cream'
     },
@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
       shortDesc: 'High SPF broad spectrum sun protection',
       desc: 'Advanced sunscreen with SPF 60 that provides broad-spectrum protection against UVA and UVB rays. Non-greasy, water-resistant formula for all-day defense.',
       price: 1099, originalPrice: 2199, rating: 4.8, reviews: 142,
-      badge: 'Popular', image: 'images/NovaSky-SunShield.png',
-      images: ['images/NovaSky-SunShield.png', 'images/NovaSky-SunShield2.png'],
+      badge: 'Popular', image: 'images/webp/NovaSky-SunShield.webp',
+      images: ['images/webp/NovaSky-SunShield.webp', 'images/webp/NovaSky-SunShield2.webp'],
       features: ['SPF 60 broad spectrum', 'Water resistant', 'Non-greasy formula', 'UVA/UVB protection'],
       category: 'Sunscreen'
     },
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
       shortDesc: 'Overnight repair and rejuvenation cream',
       desc: 'Rich night cream that works while you sleep to repair and rejuvenate your skin. Wake up to softer, smoother, and more youthful-looking skin every morning.',
       price: 1499, originalPrice: 2999, rating: 4.9, reviews: 195,
-      badge: 'Premium', image: 'images/NovaSky-AizaWithning-cream.png',
-      images: ['images/NovaSky-AizaWithning-cream.png', 'images/NovaSky-AizaWithning-cream2.png'],
+      badge: 'Premium', image: 'images/webp/NovaSky-AizaWithning-cream.webp',
+      images: ['images/webp/NovaSky-AizaWithning-cream.webp', 'images/webp/NovaSky-AizaWithning-cream2.webp'],
       features: ['Overnight repair formula', 'Anti-aging complex', 'Deep moisturization', 'Dermatologically tested'],
       category: 'Night Cream'
     }
