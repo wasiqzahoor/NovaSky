@@ -5,7 +5,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://novaskydistributors.com/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -23,7 +23,7 @@
   <!-- About Section -->
   <url>
     <loc>https://novaskydistributors.com/#about</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -31,31 +31,26 @@
   <!-- Cosmetics Section -->
   <url>
     <loc>https://novaskydistributors.com/#cosmetics</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://novaskydistributors.com/images/webp/NovaSky-Facewash.webp</image:loc>
+      <image:loc>https://novaskydistributors.com/images/webp/Facewash-Thumbnail.webp</image:loc>
       <image:title>NovaFresh Face Wash — Premium Face Wash Pakistan</image:title>
       <image:caption>Deep cleansing face wash with natural ingredients</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://novaskydistributors.com/images/webp/NovaSky-Serum.webp</image:loc>
+      <image:loc>https://novaskydistributors.com/images/webp/Serum-Thumbnail.webp</image:loc>
       <image:title>Nova Bright Serum — Vitamin C Brightening Serum</image:title>
       <image:caption>Advanced brightening serum with Vitamin C</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://novaskydistributors.com/images/webp/NovaSky-BB-Cream.webp</image:loc>
-      <image:title>Nova Glow BB Cream — Beauty Balm SPF 30</image:title>
-      <image:caption>Multi-functional BB cream with SPF protection</image:caption>
-    </image:image>
-    <image:image>
-      <image:loc>https://novaskydistributors.com/images/webp/NovaSky-SunShield.webp</image:loc>
+      <image:loc>https://novaskydistributors.com/images/webp/Sunshield-Thumbnail.webp</image:loc>
       <image:title>Nova Sunshield SPF 60 — Sunscreen Pakistan</image:title>
       <image:caption>High SPF broad spectrum sunscreen</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://novaskydistributors.com/images/webp/NovaSky-AizaWithning-cream.webp</image:loc>
+      <image:loc>https://novaskydistributors.com/images/webp/Aiza-Thumbnail.webp</image:loc>
       <image:title>AIZA Night Cream — Overnight Repair Cream</image:title>
       <image:caption>Premium night cream for overnight skin repair</image:caption>
     </image:image>
@@ -64,7 +59,7 @@
   <!-- Pharmaceuticals Section -->
   <url>
     <loc>https://novaskydistributors.com/#pharmaceuticals</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -72,7 +67,7 @@
   <!-- Nutraceuticals Section -->
   <url>
     <loc>https://novaskydistributors.com/#nutraceuticals</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -80,23 +75,15 @@
   <!-- Surgical Instruments Section -->
   <url>
     <loc>https://novaskydistributors.com/#surgical</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Deals Section -->
-  <url>
-    <loc>https://novaskydistributors.com/#deals</loc>
-    <lastmod>2026-08-10</lastmod>
-    <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Reviews Section -->
   <url>
     <loc>https://novaskydistributors.com/#reviews</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -104,7 +91,7 @@
   <!-- FAQ Section -->
   <url>
     <loc>https://novaskydistributors.com/#faq</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -112,9 +99,17 @@
   <!-- Contact Section -->
   <url>
     <loc>https://novaskydistributors.com/#contact</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <!-- Developer Website — NewAiTechSofts -->
+  <url>
+    <loc>https://newaitechsofts.com</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
 
 </urlset>
