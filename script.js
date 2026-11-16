@@ -763,53 +763,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== Complete Info Block Builder (shown inside each product detail section) =====
-  function buildFullInfoHtml(fi) {
+  function buildFullInfoHtml(fi, pid) {
     if (!fi) return '';
     const benefitsHtml = fi.benefits.map(b => `<li>${escapeHtml(b)}</li>`).join('');
     const cautionHtml = fi.caution.map(c => `<li>${escapeHtml(c)}</li>`).join('');
     const storageHtml = fi.storage ? fi.storage.map(s => `<li>${escapeHtml(s)}</li>`).join('') : '';
-    const ingredientsChips = fi.ingredients.split(', ').map(i => `<span class="dfi-chip">${escapeHtml(i)}</span>`).join('');
-    const infoHtml = fi.info.map(item => `<li>${escapeHtml(item)}</li>`).join('');
+    const ingredientsChips = fi.ingredients.split(', ').map(c => `<span class="dfi-chip">${escapeHtml(c)}</span>`).join('');
+    const infoHtml = fi.info.map(t => `<li>${escapeHtml(t)}</li>`).join('');
     const badgesHtml = fi.badges.map(b => `<span class="dfi-badge"><i class="fa-solid fa-certificate"></i> ${escapeHtml(b)}</span>`).join('');
+
+    let accId = 0;
+    const accItem = (title, icon, body, extraClass) => {
+      const id = `dfi-panel-${pid}-${++accId}`;
+      return `
+        <div class="dfi-item${extraClass ? ' ' + extraClass : ''}">
+          <button class="dfi-head" type="button" aria-expanded="false" aria-controls="${id}">
+            <span class="dfi-head-text"><i class="fa-solid ${icon}"></i> ${title}</span>
+            <i class="fa-solid fa-chevron-right dfi-chev" aria-hidden="true"></i>
+          </button>
+          <div class="dfi-body" id="${id}">
+            <div class="dfi-body-inner">
+              <div class="dfi-section">${body}</div>
+            </div>
+          </div>
+        </div>`;
+    };
+
     return `
         <div class="detail-fullinfo">
           <h3 class="dfi-main-title"><i class="fa-solid fa-clipboard-list"></i> Complete Product Information</h3>
 
-          <div class="dfi-section">
-            <h4><i class="fa-solid fa-circle-info"></i> Product Description</h4>
-            <p>${escapeHtml(fi.description)}</p>
-          </div>
-
-          <div class="dfi-section">
-            <h4><i class="fa-solid fa-star"></i> Key Benefits</h4>
-            <ul class="dfi-benefits">${benefitsHtml}</ul>
-          </div>
-
-          <div class="dfi-section">
-            <h4><i class="fa-solid fa-flask"></i> Ingredients</h4>
-            <div class="dfi-ingredients">${ingredientsChips}</div>
-          </div>
-
-          <div class="dfi-section">
-            <h4><i class="fa-solid fa-hand-sparkles"></i> Directions for Use</h4>
-            <p>${escapeHtml(fi.directions)}</p>
-          </div>
-
-          <div class="dfi-section dfi-section-caution">
-            <h4><i class="fa-solid fa-triangle-exclamation"></i> Caution</h4>
-            <ul class="dfi-caution">${cautionHtml}</ul>
-          </div>
-
-          ${fi.storage ? `
-          <div class="dfi-section">
-            <h4><i class="fa-solid fa-warehouse"></i> Storage</h4>
-            <ul class="dfi-storage">${storageHtml}</ul>
-          </div>` : ''}
-
-          <div class="dfi-section">
-            <h4><i class="fa-solid fa-tag"></i> Product Information</h4>
-            <ul class="dfi-info">${infoHtml}</ul>
-            <div class="dfi-badges">${badgesHtml}</div>
+          <div class="dfi-accordion">
+            ${accItem('Product Description', 'fa-circle-info', `<p>${escapeHtml(fi.description)}</p>`)}
+            ${accItem('Key Benefits', 'fa-star', `<ul class="dfi-benefits">${benefitsHtml}</ul>`)}
+            ${accItem('Ingredients &amp; Formula', 'fa-flask', `<div class="dfi-ingredients">${ingredientsChips}</div>`)}
+            ${accItem('How To Use', 'fa-hand-sparkles', `<p>${escapeHtml(fi.directions)}</p>`)}
+            ${accItem('Caution', 'fa-triangle-exclamation', `<ul class="dfi-caution">${cautionHtml}</ul>`, 'dfi-item-caution')}
+            ${fi.storage ? accItem('Storage', 'fa-warehouse', `<ul class="dfi-storage">${storageHtml}</ul>`) : ''}
+            ${accItem('Product Information', 'fa-tag', `<ul class="dfi-info">${infoHtml}</ul><div class="dfi-badges">${badgesHtml}</div>`)}
           </div>
         </div>`;
   }
@@ -880,11 +871,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
               </div>
             </div>
-            ${buildFullInfoHtml(fi)}
+            ${buildFullInfoHtml(fi, p.id)}
           </div>
         </div>`;
     });
     productDetails.innerHTML = html;
+
+    // Accordion (product info panels) — collapsed by default on mobile, open on desktop
+    const isDesktopInfo = window.matchMedia('(min-width: 900px)').matches;
+    productDetails.querySelectorAll('.dfi-item').forEach(item => {
+      const head = item.querySelector('.dfi-head');
+      if (isDesktopInfo) {
+        item.classList.add('open');
+        head.setAttribute('aria-expanded', 'true');
+      }
+      head.addEventListener('click', () => {
+        const open = item.classList.toggle('open');
+        head.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
 
     // Thumbnails
     productDetails.querySelectorAll('.detail-thumb').forEach(thumb => {
